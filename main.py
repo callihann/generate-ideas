@@ -19,8 +19,7 @@ def genStem():
         finalStem = stemList[random.randint(0, len(stemList) - 1)]
         
         for i in finalStem:
-                finalStem = finalStem.replace("&", random.choice(words), 1) # picks random word and replaces & symbol
-                finalStem = finalStem.replace("%", random.choice(words), 1) # picks random word and replaces % symbol
+                finalStem = finalStem.replace("&", random.choice(words), 1) # picks random word and replaces % symbol
         if int(num) >= 100: # slight optimization to prevent long wait times
                 pass
         else:
@@ -30,7 +29,7 @@ def genStem():
 for i in range(int(num)): # generates sentences in range of num specified
         genStem()
 
-f = open("out/" + num + random.choice(words)+ ".txt", 'w') # opens out file and creates .txt with number of words and a random word
+f = open("out/" + num + "-" + random.choice(words) + ".txt", 'w') # opens out file and creates .txt with number of words and a random word
 for element in final:
         f.write(element + "\n") # writes to file
 f.close()
